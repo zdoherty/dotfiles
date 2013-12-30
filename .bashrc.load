@@ -1,8 +1,6 @@
-# include what you want
-
-export PATH=$PATH:$HOME/bin
-
-# add this to the .bashrc: . $HOME/.bashrc.load
-
-####
-# put any bash customizations in here
+# Put anything you want to be in your profile here.
+export PATH=$PATH:$HOME/bin:/opt/mt/bin
+function _venv () {
+    # Attempts to enter a venv in the current directory named 'venv'
+    . venv/bin/activate
+}
