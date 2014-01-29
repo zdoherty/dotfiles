@@ -1,5 +1,8 @@
 "{{{Auto Commands
 
+" INFECT. INFECT.
+execute pathogen#infect()
+
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
