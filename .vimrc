@@ -62,6 +62,7 @@ highlight MatchParen ctermbg=4
 
 " Favorite Color Scheme
 colorscheme solarized
+set background=dark
 
 "Status line gnarliness
 set laststatus=2
@@ -90,17 +91,26 @@ endfunc
 
 "{{{ Mappings
 
+" Unfsck C-Left/Right bindings
+map <ESC>[5D <C-Left>
+map <ESC>[5C <C-Right>
+map! <ESC>[5D <C-left>
+map! <ESC>[5C <C-Right>
+
 " Map two j's to exit insert mode
 inoremap jj <Esc>
 
 " Open the Project Plugin <F2>
 nnoremap <silent> <F2> :Project<CR>
 
+" Open the NERD tree <F3>
+map <F3> :NERDTreeToggle<CR>
+
 " Next Tab
-nnoremap <silent> <C-e> :tabnext<CR>
+nnoremap <silent> <C-Right> :tabnext<CR>
 
 " Previous Tab
-nnoremap <silent> <C-a> :tabprevious<CR>
+nnoremap <silent> <C-Left> :tabprevious<CR>
 
 " New Tab
 nnoremap <silent> <C-t> :tabnew<CR>
