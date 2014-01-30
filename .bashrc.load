@@ -1,5 +1,16 @@
 # Put anything you want to be in your profile here.
+
+# Add (mt) bin path
 export PATH=$PATH:$HOME/bin:/opt/mt/bin
+
+# Fix some of the default keymaps
+bind '"\e[5C": forward-word'
+bind '"\e[5D": backward-word'
+# a commenter on the internet recommended these additional escapes
+bind '"\e[1;5C": forward-word'
+bind '"\e[1;5D": backward-word'
+
+# And a simple function for entering virtualenvs
 function _venv () {
     # Attempts to enter a venv in the current directory named 'venv'
     . venv/bin/activate

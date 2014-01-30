@@ -1,7 +1,9 @@
 "{{{Auto Commands
 
-" INFECT. INFECT.
-execute pathogen#infect()
+" Bootstrap pathogen from bundle (instead of autoload) and active
+
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 "}}}
 
@@ -59,7 +61,7 @@ highlight MatchParen ctermbg=4
 "{{{Look and Feel
 
 " Favorite Color Scheme
-colorscheme ir_black
+colorscheme solarized
 
 "Status line gnarliness
 set laststatus=2
@@ -95,10 +97,10 @@ inoremap jj <Esc>
 nnoremap <silent> <F2> :Project<CR>
 
 " Next Tab
-nnoremap <silent> B :tabnext<CR>
+nnoremap <silent> <C-e> :tabnext<CR>
 
 " Previous Tab
-nnoremap <silent> W :tabprevious<CR>
+nnoremap <silent> <C-a> :tabprevious<CR>
 
 " New Tab
 nnoremap <silent> <C-t> :tabnew<CR>
