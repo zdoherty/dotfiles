@@ -67,6 +67,13 @@ set background=dark
 "Status line gnarliness
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+set list " we do what to show tabs, to ensure we get them out of my files
+set listchars=tab:>-,trail:- " show tabs and trailing whitespace
+ 
+" NERDTree filtering
+let NERDTreeIgnore = ['\.pyc$']
+
+let g:airline_powerline_fonts = 1
 
 " }}}
 
@@ -104,7 +111,7 @@ inoremap jj <Esc>
 nnoremap <silent> <F2> :Project<CR>
 
 " Open the NERD tree <F3>
-map <F3> :NERDTreeToggle<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " Next Tab
 nnoremap <silent> <C-Right> :tabnext<CR>
