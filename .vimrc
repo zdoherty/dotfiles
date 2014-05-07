@@ -56,6 +56,14 @@ set nohidden
 
 " Set off the other paren
 highlight MatchParen ctermbg=4
+
+" NERDTree filtering
+let NERDTreeIgnore = ['\.pyc$']
+
+" Puppet and YAML files usually use two space indenting
+autocmd FileType pp setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+
 " }}}
 
 "{{{Look and Feel
@@ -67,11 +75,14 @@ set background=dark
 "Status line gnarliness
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+
+" Let's highlight undersirable nonsense
 set list " we do what to show tabs, to ensure we get them out of my files
 set listchars=tab:>-,trail:- " show tabs and trailing whitespace
+
+" Remove default mode indicator, airline already supplies one
+set noshowmode
  
-" NERDTree filtering
-let NERDTreeIgnore = ['\.pyc$']
 
 let g:airline_powerline_fonts = 1
 
