@@ -3,6 +3,9 @@ if [[ -d /opt/mt/bin ]]; then
     export PATH=$PATH:/opt/mt/bin
 fi
 
+# Thank you for flying vim
+export EDITOR=vim
+
 # Add home bin path
 export PATH=$PATH:$HOME/bin
 
