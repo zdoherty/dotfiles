@@ -8,14 +8,6 @@ export EDITOR=vim
 
 # Add home bin path
 export PATH=$PATH:$HOME/bin
-
-# Fix some of the default keymaps
-bind '"\e[5C": forward-word'
-bind '"\e[5D": backward-word'
-# A commenter on the internet recommended these additional escapes
-bind '"\e[1;5C": forward-word'
-bind '"\e[1;5D": backward-word'
-
 # Colors are nice
 alias ls="ls --color=auto"
 
