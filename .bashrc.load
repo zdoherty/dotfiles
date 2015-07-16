@@ -20,6 +20,11 @@ function _full () {
     cd $curdir
 }
 
+function _s () {
+    host=$1
+    fab get_shell:$host
+}
+
 VENVNAME=venv
 # And a simple function for entering virtualenvs
 function _venv () {
