@@ -141,18 +141,6 @@ nnoremap <silent> <F9> :%s/$//g<CR>:%s// /g<CR>
 nnoremap <silent> <F10> :call Paste_on_off()<CR>
 set pastetoggle=<F10>
 
-" Edit vimrc \ev
-nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.vimrc<CR>
-
-" Edit gvimrc \gv
-nnoremap <silent> <Leader>gv :tabnew<CR>:e ~/.gvimrc<CR>
-
-" Up and down are more logical with g..
-nnoremap <silent> k gk
-nnoremap <silent> j gj
-inoremap <silent> <Up> <Esc>gka
-inoremap <silent> <Down> <Esc>gja
-
 " Create Blank Newlines and stay in Normal mode
 nnoremap <silent> zj o<Esc>
 nnoremap <silent> zk O<Esc>

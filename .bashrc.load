@@ -1,53 +1,29 @@
-export PATH=$PATH:$HOME/bin
+if ! echo "$PATH" | grep -q "$HOME/bin"; then
+    # push dotfile bin path to $PATH
+    export PATH=$PATH:$HOME/bin
+fi
+# thank you for flying vim
 export EDITOR=vim
 
-VENVNAME=venv
+# virtualenvwrapper
+export WORKON_HOME=~/Code/Envs
+. /usr/local/bin/virtualenvwrapper.sh
+
 PS1='\[\e[0;34m\]\u\[\e[1;32m\]@\[\e[0;34m\]\h\[\e[1;32m\]:\[\e[0;34m\]\w\[\e[m\]\[\e[1;32m\]\$\[\e[m\] '
 
-# Add (mt) bin path if it exists
-if [[ -d /opt/mt/bin ]]; then
-    export PATH=$PATH:/opt/mt/bin
-fi
-
 # Colors are nice
-alias ls="ls --color=auto"
+if [[ -d /Library ]]; then
+    # looks like we're on a mac
+    alias ls="ls -G"
+else
+    # long options are fine for GNU ls
+    alias ls="ls --color=auto"
+fi
 
 # Function to pull in all our additional dotfiles
 function _full () {
-    curdir=$(pwd)
-    cd ~/.dotfiles
+    pushd ~/.dotfiles
     git submodule init
     git submodule update
-    cd $curdir
+    popd
 }
-
-function _s () {
-    host=$1
-    fab get_shell:$host
-}
-
-# And a simple function for entering virtualenvs
-function _venv () {
-    if [[ "$1" != "" ]]; then
-        name=$1
-    elif [[ "$VENVNAME" != "" ]]; then
-        name=$VENVNAME
-    else
-        return 1
-    fi
-
-    # Attempts to enter a venv in the current directory named $name 
-    if [[ -d ./$name ]]
-    then
-        source $name/bin/activate
-    # If not present, try home dir
-    elif [[ -d ~/$name ]]
-    then
-        source ~/$name/bin/activate
-    else 
-    # If neither, error
-        echo No venv found named $name
-        return 1
-    fi
-}
-

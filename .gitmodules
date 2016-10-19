@@ -18,7 +18,10 @@
 	url = https://github.com/tpope/vim-fugitive
 [submodule ".vim/bundle/vim-tabular"]
 	path = .vim/bundle/vim-tabular
-	url = https://github.com/godlygeek/tabular
+	url = https://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/vim-vagrant"]
+	path = .vim/bundle/vim-vagrant
+	url = https://github.com/hashivim/vim-vagrant.git
