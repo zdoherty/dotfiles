@@ -56,4 +56,15 @@
 *color15:               S_base3
 
 !! Make urxvt prettier
-URxvt.font: xft:Inconsolata for Powerline:pixelsize=12
+URxvt*font:             xft:Inconsolata for Powerline:pixelsize=14
+URxvt*scrollBar:        false
+URxvt*scrollColor:      S_base01
+URxvt*title:            terminal
+URxvt*termName:         rxvt-unicode-256color
+URxvt*visualBell:       true
+URxvt*depth:            256
+
+!! font rendering
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
