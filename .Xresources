@@ -55,5 +55,17 @@
 *color7:                S_base2
 *color15:               S_base3
 
-!! Make urxvt prettier
-URxvt.font: xft:Inconsolata for Powerline:pixelsize=12
+!! Make URxvt prettier
+URxvt.font:             xft:Inconsolata for Powerline:pixelsize=18
+URxvt.scrollBar:        false
+URxvt.depth:            256
+URxvt.termName:         rxvt-unicode-256color
+
+!! Usability improvements
+URxvt.visualBall:       true
+URxvt.loginShell:       true
+URxvt.saveLines:        10000
+
+!! Scroll to the bottom on non-special keypress, but not because new output is ready
+URxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOutput:  false
