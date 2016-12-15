@@ -68,3 +68,12 @@ URxvt*depth:            256
 Xft*dpi:                96
 Xft*antialias:          true
 Xft*hinting:            full
+
+!! Usability improvements
+URxvt.visualBall:       true
+URxvt.loginShell:       true
+URxvt.saveLines:        10000
+
+!! Scroll to the bottom on non-special keypress, but not because new output is ready
+URxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOutput:  false

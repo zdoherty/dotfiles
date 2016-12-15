@@ -30,7 +30,16 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
+<<<<<<< HEAD:.config/i3/config
 bindsym $mod+Return exec urxvtc
+=======
+bindsym $mod+Return exec urxvtcd
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+>>>>>>> a9a90073b72860ee44dd3dc535da4b96c51c98e7:.i3/config
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -64,8 +73,8 @@ bindsym $mod+Shift+semicolon split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -104,10 +113,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -139,8 +144,9 @@ bar {
 
 set $lock_screen "i3lock -c 000000"
 
-exec_always load_xrdb
-exec --no-startup-id urxvtd -q -f -o
+exec /home/zack/bin/load_xrdb
+exec /home/zack/bin/load_main_workspace
+exec /home/zack/bin/load_monitor_workspace
 
 # automatically lock computer after 5 minutes of inactivity
 exec_always --no-startup-id xautolock -time 5 -locker "$lock_screen"
@@ -152,3 +158,12 @@ bindsym --release $mod+Control+Shift+l exec $lock_screen
 bindsym --release $mod+Control+Shift+r exec $lock_screen && systemctl reboot
 bindsym --release $mod+Control+Shift+h exec $lock_screen && systemctl poweroff
 bindsym --release $mod+Control+Shift+o exec i3-msg exit
+
+# volume controls!
+bindsym --release $mod+equal exec amixer set Master 10%+
+bindsym --release $mod+minus exec amixer set Master 10%-
+
+# scratchpad goodness
+bindsym $mod+s scratchpad show
+bindsym $mod+Shift+s move window to scratchpad
+for_window [instance="scratchpad"] move window to scratchpad
