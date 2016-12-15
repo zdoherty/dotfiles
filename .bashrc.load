@@ -1,7 +1,8 @@
-if ! echo "$PATH" | grep -q "$HOME/bin"; then
-    # push dotfile bin path to $PATH
-    export PATH=$PATH:$HOME/bin
-fi
+for path in "$HOME/.local/bin" "$HOME/bin"; do
+    if ! echo $PATH | grep -q $path; then
+        export PATH=$path:$PATH
+    fi
+done
 
 export EDITOR=vim
 

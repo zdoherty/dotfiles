@@ -19,3 +19,5 @@ if [ ! -f $VENV_WRAPPER ]; then
 fi
 
 . $VENV_WRAPPER
+
+OLD_PATH=$PATH

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 if [[ $# != 1 ]]; then
     echo "usage: $0 <login|logout>"
@@ -13,7 +13,7 @@ command="$1"
 case $command in
     login)
 
-    eval $(gpg -d $HOME/.aws/keys.gpg)
+    eval $(cat $HOME/.aws/keys.gpg)
     aws configure set profile.$profile.aws_access_key_id $BASTION_AWS_ACCESS_KEY_ID
     aws configure set profile.$profile.aws_secret_access_key $BASTION_AWS_SECRET_ACCESS_KEY
     unset BASTION_AWS_ACCESS_KEY_ID

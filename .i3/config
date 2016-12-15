@@ -69,8 +69,8 @@ bindsym $mod+Shift+semicolon split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -140,7 +140,9 @@ bar {
 
 set $lock_screen "i3lock -c 000000"
 
-exec load_xrdb
+exec /home/zack/bin/load_xrdb
+exec /home/zack/bin/load_main_workspace
+exec /home/zack/bin/load_monitor_workspace
 
 # automatically lock computer after 5 minutes of inactivity
 exec_always --no-startup-id xautolock -time 5 -locker "$lock_screen"
@@ -156,3 +158,8 @@ bindsym --release $mod+Control+Shift+o exec i3-msg exit
 # volume controls!
 bindsym --release $mod+equal exec amixer set Master 10%+
 bindsym --release $mod+minus exec amixer set Master 10%-
+
+# scratchpad goodness
+bindsym $mod+s scratchpad show
+bindsym $mod+Shift+s move window to scratchpad
+for_window [instance="scratchpad"] move window to scratchpad
