@@ -30,16 +30,12 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-<<<<<<< HEAD:.config/i3/config
-bindsym $mod+Return exec urxvtc
-=======
-bindsym $mod+Return exec urxvtcd
+bindsym $mod+Return exec urxvt
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
->>>>>>> a9a90073b72860ee44dd3dc535da4b96c51c98e7:.i3/config
 
 # kill focused window
 bindsym $mod+Shift+q kill

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 if [[ $# != 1 ]]; then
     echo "usage: $0 <login|logout>"
