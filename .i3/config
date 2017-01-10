@@ -151,8 +151,8 @@ exec_always --no-startup-id xautolock -time 5 -locker "$lock_screen"
 bindsym --release $mod+Control+Shift+l exec $lock_screen
 
 # and session management
-bindsym --release $mod+Control+Shift+r exec $lock_screen && systemctl reboot
-bindsym --release $mod+Control+Shift+h exec $lock_screen && systemctl poweroff
+bindsym --release $mod+Control+Shift+r exec systemctl reboot
+bindsym --release $mod+Control+Shift+h exec systemctl poweroff
 bindsym --release $mod+Control+Shift+o exec i3-msg exit
 
 # volume controls!
