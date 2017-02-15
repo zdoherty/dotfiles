@@ -44,12 +44,16 @@
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
 
-[url "git@github.com:"]
-    insteadOf = "https://github.com/"
-[url "git@github.com:"]
-    pushInsteadOf = "git://github.com/"
-[url "git@github.com:"]
-    pushInsteadOf = "https://github.com/"
+[url "git@github.com:TinderBackend"]
+    insteadOf = "https://github.com/TinderBackend"
+[url "git@github.com:TinderOps"]
+    insteadOf = "https://github.com/TinderOps"
+[url "git@github.com:TinderApp"]
+    insteadOf = "https://github.com/TinderApp"
+#[url "git@github.com:"]
+#    pushInsteadOf = "git://github.com/"
+#[url "git@github.com:"]
+#    pushInsteadOf = "https://github.com/"
 
 [merge]
     tool = vimdiff

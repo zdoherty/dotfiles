@@ -56,7 +56,7 @@
 *color15:               S_base3
 
 !! Make urxvt prettier
-URxvt*font:             xft:Inconsolata for Powerline:pixelsize=18:antialias=true:hinting=true
+URxvt*font:             xft:Inconsolata for Powerline:pixelsize=16:antialias=true:hinting=true
 URxvt*scrollBar:        false
 URxvt*scrollColor:      S_base01
 URxvt*boldColors:       false

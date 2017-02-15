@@ -31,7 +31,7 @@ function _full () {
     popd
 }
 
-for localrc in $(ls -1rt -d $HOME/.local/rcs/* 2>/dev/null || exit 0); do
+for localrc in $(ls -1 $HOME/.local/rcs/*.sh 2>/dev/null || exit 0); do
     . $localrc
 done
 

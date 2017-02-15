@@ -21,6 +21,7 @@ case $command in
 
     echo -n "Token: "
     read -s token
+    echo
 
     output=$(aws --profile $profile sts get-session-token --serial-number $(aws configure get $profile.mfa_serial) --token-code $token)
 
